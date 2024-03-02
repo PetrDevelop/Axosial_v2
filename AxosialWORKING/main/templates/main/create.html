@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Создать пост
+{% endblock %}
+
+{% block content %}
+
+
+<h1 id="title">Создать пост</h1>
+
+<div class="form">
+
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{form.title}}
+        {{form.anons}}
+        {{form.text}}
+        {{form.buttonText}}
+        {{form.date}}
+      
+
+        <button class="btn btn-success" type="submit">Отправить</button>
+    </form>
+</div>
+{% endblock %}

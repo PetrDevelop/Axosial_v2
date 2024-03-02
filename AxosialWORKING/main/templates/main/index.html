@@ -1,0 +1,39 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}
+Главная
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!-- <link rel="stylesheet" href="{}"> -->
+
+<h1 id="title" style="height:90px;">Главная страница</h1>
+<div class="fasts">
+
+
+
+    {% for fast in fasts %}
+    <!-- <h1>{{fast.title}}</h1></button>
+    <h1>{{fast.date}}</h1> -->
+
+    <div class="alert alert-warning">
+        <h1>{{fast.title}}</h1>
+        <p style="font-size:20px;">{{fast.date}}</p>
+        <p >{{fast.anons}}</p>
+            
+        <a style="position:absolute;width:60%;bottom:0;right:20%" href="{% url 'FastDetail' fast.id %}" class="btn btn-secondary">{{fast.buttonText}}</a>
+       
+        <!-- <span></span> -->
+    </div>
+
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}
